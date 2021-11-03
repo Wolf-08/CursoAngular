@@ -215,6 +215,7 @@ function getAvenger( nombre: string, poder?: string, arma: string = 'arco' ):str
 // ese método debe de retornar un numero.
 
 class Rectangulo {
+    //La funcion flecha va aqui porque no modifica el objeto this. :D
     calcularArea = ():number => this.base * this.altura;
     constructor (public base: number, public altura: number){
     }   

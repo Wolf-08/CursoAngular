@@ -152,6 +152,7 @@
             var _this = this;
             this.base = base;
             this.altura = altura;
+            //La funcion flecha va aqui porque no modifica el objeto this. :D
             this.calcularArea = function () { return _this.base * _this.altura; };
         }
         return Rectangulo;
