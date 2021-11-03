@@ -2,15 +2,15 @@
 <hr>
 <div class="row">
 
-    <div class="col-md-4" *ngFor="let item of heros">
+    <div class="col-md-4" animated fadeIn fast *ngFor="let item of heros; let i=index ">
         <img class="card-img-top img-fluid" src="{{ item.img }}" [alt]="item.nombre">
         <div class="card-block">
             <h5 class="card-title">{{ item.nombre }}</h5>
             <p class="card-text">{{ item.bio }}</p>
             <p class="card-text"><small class="text-muted">{{ item.aparicion }}</small></p>
 
-            <button type="button" class="btn btn-outline-primary btn-block">Ver más...</button>
-
+            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver más...</button>
+            <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas ... link</a> -->
         </div>
     </div>
 
