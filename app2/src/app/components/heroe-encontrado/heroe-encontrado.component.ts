@@ -17,6 +17,7 @@ export class HeroeEncontradoComponent implements OnInit {
       
       this.activatedRoute.params.subscribe(params=>{
         //Parametro obtenido desde la URL 
+        console.log(params['nombre']);
           this.nombre = params['nombre'];
           this.heroe = this.heroeServvice.buscarHeroe(params['nombre']);
           console.log(this.heroe);
@@ -30,5 +31,4 @@ export class HeroeEncontradoComponent implements OnInit {
     this.route.navigate(['/heroe',idx]);
     console.log(idx);
 }
-
 }
