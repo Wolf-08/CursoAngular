@@ -68,6 +68,22 @@ export class HeroesService {
     getHeroe(idx:number){
         return this.heroes[idx]
     }
+
+    buscarHeroe(nombreHeroe:string):Heroe[]{
+
+      nombreHeroe= nombreHeroe.toLowerCase(); 
+      let heroesArr: Heroe[] = [];
+
+
+      for (const heroe of this.heroes) {
+      let hereoNombre = heroe.nombre.toLowerCase();
+      if (hereoNombre.indexOf(nombreHeroe) >= 0)
+      heroesArr.push(heroe);
+      }
+
+      return heroesArr;
+
+    }
 }
 export interface Heroe {
        nombre: string;

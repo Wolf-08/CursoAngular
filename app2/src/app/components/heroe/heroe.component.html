@@ -1,7 +1,8 @@
-<h1>{{ heroe.nombre }} <br><small>{{heroe.aparicion}}</small></h1>
+<!-- El uso de pipes // | \\ puede usarse para mostrar la data en la vista -->
+<h1>{{ heroe.nombre | uppercase }} <br><small> ({{heroe.aparicion | date: 'y'}})</small></h1>
 <hr>
 
-<div class="row">
+<div class="row ">
     <div class="col-md-4">
         <img [src]="heroe.img" alt="imagen_heroe" class="img-fluid">
         <br><br>
@@ -17,10 +18,10 @@
 
         <!-- casa diferente si es marvel o dc -->
         <div *ngIf="heroe.casa == 'Marvel'">
-            <img src="assets/img/casaMarvel.png" alt="casa" class="img-fluid">
+            <img src="assets/img/casaMarvel.png" alt="casa" class="img-fluid" width="120px">
         </div>
         <div *ngIf="heroe.casa == 'DC'">
-            <img src="assets/img/casaDc.jpg" alt="casa" class="img-fluid">
+            <img src="assets/img/casaDc.jpg" alt="casa" class="img-fluid" width="120px">
         </div>
 
     </div>
