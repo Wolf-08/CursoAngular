@@ -6,18 +6,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nombre = 'Alejandro Montecillo';
-  PI = Math.PI;
-  procentaje:number = 0.23123;
-  salario:number = 12312.23;
+  
+    nombre    : string   = 'Capitán América';
+    nombre2   : string   = 'AlejANdrO MonTecIllO';
+    personajes: string[] = ['Ironman', 'Spiderman', 'Thor','Loki','Groot'];
+    PI        : number   = Math.PI;
+    porcentaje: number   = 0.235;
+    salario   : number   = 1234.5
+    fecha     : Date     = new Date();
+    activar   : boolean  = true;
 
-  promesa = new Promise((response) =>{
+    idioma    : string = 'en';
+    videoUrl  : string = 'https://www.youtube.com/embed/-CBKW-90VxQ';
 
-    setTimeout(() =>{
+    valorPromesa = new Promise<string>( (resolve) => {
 
-      response('lledgo la data');
-    },3500)
-  })
+      setTimeout(() => {
+        resolve('llego la data');
+      }, 4500);
 
-  date = new Date();
+    });
+
+    heroe = {
+      nombre: 'Logan',
+      clave: 'Wolverine',
+      edad: 500,
+      direccion: {
+        calle: 'Primera',
+        casa: 20
+      }
+    }
+
 }
