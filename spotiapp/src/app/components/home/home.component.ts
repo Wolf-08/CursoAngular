@@ -25,10 +25,11 @@ export class HomeComponent implements OnInit {
     // );
 
     //Obtencion de la informacion de los albums para mostrarlos en tarjetas 
+    //Operador map swith para elegir el tipo de informacion ue se necesita
     this.spotifyService.getReleases()
     .subscribe((data:any) => {
       console.log(data);
-      this.nuevasCanciones = data.albums.items;
+      this.nuevasCanciones = data;
     });
   }
 
