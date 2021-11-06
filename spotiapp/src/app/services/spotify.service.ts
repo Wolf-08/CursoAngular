@@ -14,7 +14,7 @@ export class SpotifyService {
   getQuery( query:string){
     const url = `https://api.spotify.com/v1/${query}`
     const headers = new HttpHeaders ({
-      'Authorization' : 'Bearer BQDB6DtA_Cy1IwqpHDTbdGnW-HqP7ofwnODXf7ylPiwBC-W1C_GBUGzKj5ajke_WGIYEB3_085S8bcecWeY'});
+      'Authorization' : 'Bearer BQDWU1QEzIHY4AMj2Htyltuf3C5GyfqDrEg8nBT1figtV4sAvalAdeCE-ooGRN-AA6zcVg1X1Kn_DjpjQfc'});
 
       return this.http.get(url,{headers});
   }
@@ -27,7 +27,7 @@ export class SpotifyService {
     // 'Authorization' : 'Bearer BQCuEoQu23Lt_VmAOBpa-SbK4C5rRlXsIDwicLu4AZJrT5kZcEy_eV4HDaLNo-idGI2fcicctaUyzw_HraY'});
     //operador pipe para poder empezar a filtrar la informacion modificacion, se utiliza pipe para poder usar map
     
-    return this.getQuery('browse/new-releases').pipe( map ( (data:any) => 
+    return this.getQuery('browse/new-releases?limit=20').pipe( map ( (data:any) => 
     {
       return data.albums.items 
     }));
@@ -40,5 +40,10 @@ export class SpotifyService {
         return data.artists.items;
   }));
 }
-
+getArtist(id: string ){
+  
+  return this.getQuery(`artists/${id}`);
+  //.pipe( map ( (data:any )=>{ return data.artists.items;}));
+}
+ 
 }
