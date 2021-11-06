@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   
   paises: any []=[] ;
   nuevasCanciones: any []=[] ;
+  loading: boolean = true;
   
 
 
@@ -30,6 +31,7 @@ export class HomeComponent implements OnInit {
     .subscribe((data:any) => {
       console.log(data);
       this.nuevasCanciones = data;
+      this.loading = false;
     });
   }
 
