@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
   paises: any []=[] ;
   nuevasCanciones: any []=[] ;
   loading: boolean = true;
+  error:boolean = false;
+  mensajeError : string = '';
   
 
 
@@ -32,7 +34,12 @@ export class HomeComponent implements OnInit {
       console.log(data);
       this.nuevasCanciones = data;
       this.loading = false;
-    });
+    }, (error =>{
+this.loading = false;
+this.error = true;
+console.log(error)
+this.mensajeError = error.error.error.message;
+    }));
   }
 
   ngOnInit(): void {
